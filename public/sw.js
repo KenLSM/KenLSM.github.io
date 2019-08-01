@@ -26,37 +26,37 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-f90b78cc6d69d4fa4a1c.js"
+    "url": "webpack-runtime-7d61ee945b23cea38edd.js"
   },
   {
-    "url": "styles.cc73919c4fdcf374c41a.css"
+    "url": "styles.d20aa389245570f7b0f6.css"
   },
   {
     "url": "styles-652bd96731c07d176141.js"
   },
   {
-    "url": "app-9bdba7486c4f718195be.js"
+    "url": "app-f8d0a83c7061120d36e2.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-fd7edd369e267dad4496.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "a97f303450bfcd181349d388ecad3d8b"
+    "revision": "c4269b42711c1d996df2539a2a78a871"
   },
   {
     "url": "0-f1e21c12b6f552990213.js"
   },
   {
-    "url": "component---src-pages-404-js-2c0dc443511d7a3e77e1.js"
+    "url": "component---src-pages-404-js-72ee47f22e74a1f63a6c.js"
   },
   {
     "url": "page-data/404.html/page-data.json",
-    "revision": "7aa4cb5a77aed6ccc4587ebbfb76e8f6"
+    "revision": "32b1d5b76b6685b2a6c06836cb3287b5"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "59149e7600e4a57dc292d65e7de4a47b"
+    "revision": "0e611ba495601fab5b3ba183ea8fac0e"
   },
   {
     "url": "manifest.webmanifest",
@@ -82,7 +82,7 @@ const navigationRoute = new workbox.routing.NavigationRoute(({ event }) => {
   return idbKeyval.get(WHITELIST_KEY).then((customWhitelist = []) => {
     // Respond with the offline shell if we match the custom whitelist
     if (customWhitelist.includes(pathname)) {
-      const offlineShell = `/KenLSM/offline-plugin-app-shell-fallback/index.html`
+      const offlineShell = `/kenthoughts/offline-plugin-app-shell-fallback/index.html`
       const cacheName = workbox.core.cacheNames.precache
 
       return caches.match(offlineShell, { cacheName }).then(cachedResponse => {
@@ -154,7 +154,7 @@ const messageApi = {
 
     pathnames = pathnames.map(({ pathname, includesPrefix }) => {
       if (!includesPrefix) {
-        return `/KenLSM${pathname}`
+        return `/kenthoughts${pathname}`
       } else {
         return pathname
       }
