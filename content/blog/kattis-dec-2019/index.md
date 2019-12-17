@@ -47,6 +47,9 @@ https://open.kattis.com/problems/howmanydigits
 https://open.kattis.com/problems/lastfactorialdigit
 https://open.kattis.com/problems/juryjeopardy
 https://open.kattis.com/problems/phonelist (js/node)
+https://open.kattis.com/problems/display
+https://open.kattis.com/problems/sgcoin
+https://open.kattis.com/problems/anthonyanddiablo (math)
 
 #### 13 Dec
 
@@ -59,3 +62,11 @@ Score: 172.3 Rank: 2417
 #### 15 Dec
 
 Score: 178.6 Rank: 2306
+
+### 17 Dec
+
+Score: 186.6 Rank: 2203
+
+### 18 Dec
+
+Score: 189.1 Rank: 2168

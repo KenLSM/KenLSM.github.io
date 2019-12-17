@@ -1,0 +1,19 @@
+---
+title: Dec 2019 Kattis
+date: "2019-12-16T00:00:00.000Z"
+description: Deciding to start a weekly (or monthly) instead
+---
+
+I always chance upon things that are interesting, but never consistently note them down for reference when I'm free.
+
+- [] shoppertainment -- entertainment on shopping platforms
+- [x] adobe experience manager (aem) -- its a drag and drop system for marketers or people in a hurry
+- [x] `aspell` -- a spellcheck on bash, it installs a huge library though 300+mb, using it as `alias="aspell list < "`
+- [x] read huijing's [blog](https://www.chenhuijing.com/blog/conference-season-2019/)
+- [x] use a better clipboard -- CopyClip from App Store
+- [] bittorrent symbols
+
+Watch these vids:
+
+- [] https://www.youtube.com/watch?v=ZRtzk0371tk&list=WL&index=23&t=0s
+- [] https://egghead.io/courses/designing-graphql-schemas-99db -- not sure if free
