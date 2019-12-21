@@ -11,7 +11,7 @@ import Image from "gatsby-image";
 
 import { rhythm } from "../utils/typography";
 
-const Bio = () => {
+const Bio = ({ short }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.*/" }) {
@@ -44,10 +44,10 @@ const Bio = () => {
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
+          flexShrink: 0,
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
           minWidth: rhythm(5 / 2),
-          height: rhythm(5 / 2),
           borderRadius: `100%`
         }}
         imgStyle={{
@@ -59,9 +59,11 @@ const Bio = () => {
           I'm <a href={`https://twitter.com/${social.twitter}`}>{author}</a> 🇸🇬
         </p>
         <p>
-          Penning down thoughts, and ideas to share. During my commute, my brain
-          digests through many thoughts of others. And through them, I pen down
-          thoughts and ideas of yestermorning.
+          {short
+            ? `Thinking and trying to build useful things.`
+            : `Penning down thoughts, and ideas to share. During my commute, my
+          brain digests through many thoughts of others. And through them, I pen
+          down thoughts and ideas of yestermorning.`}
         </p>
       </div>
     </div>
