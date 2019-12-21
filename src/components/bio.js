@@ -46,7 +46,8 @@ const Bio = () => {
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          minWidth: 0,
+          minWidth: rhythm(5 / 2),
+          height: rhythm(5 / 2),
           borderRadius: `100%`
         }}
         imgStyle={{
@@ -55,10 +56,12 @@ const Bio = () => {
       />
       <div>
         <p style={{ marginBottom: 0 }}>
-          Written by{" "}
-          <a href={`https://twitter.com/${social.twitter}`}>{author}</a> 🇸🇬.
-          <br />
-          Trying to build useful things.
+          I'm <a href={`https://twitter.com/${social.twitter}`}>{author}</a> 🇸🇬
+        </p>
+        <p>
+          Penning down thoughts, and ideas to share. During my commute, my brain
+          digests through many thoughts of others. And through them, I pen down
+          thoughts and ideas of yestermorning.
         </p>
       </div>
     </div>
