@@ -1,5 +1,5 @@
 ---
-title: Dec 2019 Kattis
+title: Weekly - 16 Dec 2019
 date: "2019-12-16T00:00:00.000Z"
 description: Deciding to start a weekly (or monthly) instead
 ---
