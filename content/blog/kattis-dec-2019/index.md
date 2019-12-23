@@ -26,6 +26,14 @@ description: Refreshing myself with C++
 2. Try using simple hash
 3. Try using DP
 
+### Shorthands that are useful
+
+1. `#define ii pair<int, int>`
+   storing two integers, useful in 2d-mazes. Access elements by `first` and `second`
+
+2. `#define vii vector<pair<int, int>>`
+   storing ii in vectors
+
 ### Problems I'm able to solve
 
 - math based
@@ -43,14 +51,25 @@ description: Refreshing myself with C++
 
 https://open.kattis.com/problems/password
 https://open.kattis.com/problems/batterup
-https://open.kattis.com/problems/howmanydigits
+https://open.kattis.com/problems/howmanydigits (math)
 https://open.kattis.com/problems/lastfactorialdigit
 https://open.kattis.com/problems/juryjeopardy
 https://open.kattis.com/problems/phonelist (js/node)
 https://open.kattis.com/problems/display
 https://open.kattis.com/problems/sgcoin
 https://open.kattis.com/problems/anthonyanddiablo (math)
+https://open.kattis.com/problems/santaklas (math)
+https://open.kattis.com/problems/mastermind
+https://open.kattis.com/problems/stringmatching (string algo)
+https://open.kattis.com/problems/primesieve
+https://open.kattis.com/problems/robotturtles (maze/graph/hard edgecases)
 
+## Uncompletion list
+
+https://open.kattis.com/problems/thekingofthenorth (maze/graph)
+https://open.kattis.com/problems/inversefactorial (math)
+
+<!-- commented out section
 #### 13 Dec
 
 Score: 163.7 Rank: 2595
@@ -70,3 +89,12 @@ Score: 186.6 Rank: 2203
 ### 18 Dec
 
 Score: 189.1 Rank: 2168
+
+### 21 Dec
+
+Score: 204.1 Rank: 1978
+
+### 24 Dec
+
+Score: 209.7Rank: 1914
+-->
