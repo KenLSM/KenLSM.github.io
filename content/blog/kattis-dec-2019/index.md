@@ -63,11 +63,12 @@ https://open.kattis.com/problems/mastermind
 https://open.kattis.com/problems/stringmatching (string algo)
 https://open.kattis.com/problems/primesieve
 https://open.kattis.com/problems/robotturtles (maze/graph/hard edgecases)
+https://open.kattis.com/problems/inversefactorial (math)
+https://open.kattis.com/problems/cursethedarkness (math)
 
 ## Uncompletion list
 
 https://open.kattis.com/problems/thekingofthenorth (maze/graph)
-https://open.kattis.com/problems/inversefactorial (math)
 
 <!-- commented out section
 #### 13 Dec
@@ -97,4 +98,8 @@ Score: 204.1 Rank: 1978
 ### 24 Dec
 
 Score: 209.7Rank: 1914
+
+### 25 Dec
+
+Score: 239.6 Rank: 1624
 -->
