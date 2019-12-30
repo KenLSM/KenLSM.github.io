@@ -5,9 +5,11 @@ module.exports = {
     description: `A blog demonstrating what Ken ken do.`,
     social: {
       twitter: `kenleesm`
-    }
+    },
+    siteUrl: `https://kenlsm.com`
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
