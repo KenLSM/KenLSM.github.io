@@ -65,6 +65,11 @@ https://open.kattis.com/problems/primesieve
 https://open.kattis.com/problems/robotturtles (maze/graph/hard edgecases)
 https://open.kattis.com/problems/inversefactorial (math)
 https://open.kattis.com/problems/cursethedarkness (math)
+https://open.kattis.com/problems/tsp (tsp, obviously)
+https://open.kattis.com/problems/toys (math)
+https://open.kattis.com/problems/secretsanta (math/hacks)
+https://open.kattis.com/problems/battlesimulation
+https://open.kattis.com/problems/ants
 
 ## Uncompletion list
 
@@ -106,4 +111,8 @@ Score: 239.6 Rank: 1624
 ### 30 Dec
 
 Score: 241.8 Rank: 1613
+
+### 1 Jan
+
+Score
 -->
