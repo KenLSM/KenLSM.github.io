@@ -13,3 +13,5 @@ I always chance upon things that are interesting, but never consistently note th
 - [x] [Hamming Weight](https://en.wikipedia.org/wiki/Hamming_weight)
 
       Its a really quick way to calculate number of non-0 values in a series of digits (binary or non-binary)
+
+- [x] `adb -s <DEVICE_ID> <COMMAND>` to target specific devices if you have many devices attached
