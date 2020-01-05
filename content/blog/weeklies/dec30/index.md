@@ -15,3 +15,10 @@ I always chance upon things that are interesting, but never consistently note th
       Its a really quick way to calculate number of non-0 values in a series of digits (binary or non-binary)
 
 - [x] `adb -s <DEVICE_ID> <COMMAND>` to target specific devices if you have many devices attached
+- [ ] `autocannon` a program that can spam requests to server
+
+  might be useful for stress testing?
+
+- [ ] `node --inspect <file_name>` can open flamegraph in `chrome://inspect`?
+
+  might be useful for the gameboy stuff
