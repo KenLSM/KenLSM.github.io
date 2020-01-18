@@ -14,3 +14,4 @@ tag: monthly
 
 GraphQL vs Rest arguments
 - [x] [Ben Awad - YT](https://www.youtube.com/watch?v=AYZOHt6kz6Y)
+- [x] [CPP string maniop](https://en.cppreference.com/w/cpp/io/manip) helps in formatting output

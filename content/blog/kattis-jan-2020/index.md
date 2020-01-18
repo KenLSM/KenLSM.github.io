@@ -16,6 +16,8 @@ Just before 2019 ended, Jen and I set out to review and plan our one year resolu
 
    using `map['foo'] = bar` is simpler
 
+2. `#include <iomanip>` [DOCS](https://en.cppreference.com/w/cpp/io/manip) for various io manipulation, such as `setw`, `setfill`, `hex`, and `uppercase`
+
 ### Things to be care of, to avoid TLE
 
 1.
@@ -39,6 +41,9 @@ https://open.kattis.com/problems/tourdefrance (edge case with whole numbers)
 https://open.kattis.com/problems/treasurehunt (maze)
 https://open.kattis.com/problems/throwns (ds, edge case with neg)
 https://open.kattis.com/problems/variablearithmetic (string manipulation in c++)
+https://open.kattis.com/problems/arithmetic (cs)
+https://open.kattis.com/problems/alldifferentdirections
+https://open.kattis.com/problems/areyoulistening
 
 ## Uncompletion list
 
@@ -62,4 +67,8 @@ Score: 266.1 Rank: 1431
 ### 5 Jan
 
 Score: 270.0 Rank: 1400
+
+### 18 Jan
+
+Score: 280.5 Rank: 1333
 -->
