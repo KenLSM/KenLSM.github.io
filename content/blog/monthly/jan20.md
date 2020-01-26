@@ -2,7 +2,7 @@
 title: I shall do Monthly Journaling
 date: "2020-01-05T00:00:00.000Z"
 description: Monthly - the excitments of new year
-tag: monthly
+tags: monthly
 ---
 
 ## TWIL

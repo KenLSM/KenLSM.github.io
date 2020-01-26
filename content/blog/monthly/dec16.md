@@ -2,7 +2,7 @@
 title: Deciding to start a weekly (or monthly) instead
 date: "2019-12-16T00:00:00.000Z"
 description: Restarting blogging and maybe and learninpublic?
-tag: weekly
+tags: monthly
 ---
 
 ## View whether its on par with remote from `glol`

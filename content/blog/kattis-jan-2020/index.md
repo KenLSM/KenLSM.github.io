@@ -2,7 +2,7 @@
 title: Jan 2020 Kattis
 date: "2020-01-01T00:00:00.000Z"
 description: Rememberance of my Math and CS lectures
-tag: kattis
+tags: kattis
 ---
 
 Just before 2019 ended, Jen and I set out to review and plan our one year resolution for the year of 2020, AKA, new year resolution. As part of my list of resolutions, I had set myself to reach a certain goal in kattis. It will be a busy yet exciting year ahead :)
@@ -48,6 +48,7 @@ https://open.kattis.com/problems/areyoulistening
 ## Uncompletion list
 
 https://open.kattis.com/problems/bard (WA)
+https://open.kattis.com/problems/continuousmedian (WA)
 https://open.kattis.com/problems/narrowartgallery (no solution)
 
 <!-- commented out section

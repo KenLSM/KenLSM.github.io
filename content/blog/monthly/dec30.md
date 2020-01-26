@@ -2,7 +2,7 @@
 title: Crossing the new year
 date: "2019-12-30T00:00:00.000Z"
 description: Weekly - crossing the new year
-tag: weekly
+tags: weekly
 ---
 
 ## TWIL
