@@ -36,7 +36,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
           <span style={{ marginLeft: rhythm(1 / 2), color: "lightgray" }}>
-            {post.timeToRead} minute{post.timeToRead > 1 ? 's':''} read
+            {post.timeToRead} min{post.timeToRead > 1 ? 's':''} read
           </span>
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
