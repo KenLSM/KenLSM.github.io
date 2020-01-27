@@ -12,11 +12,6 @@ Noriega.overrideThemeStyles = () => {
     body: {
       color: "navajowhite"
     },
-    code: {
-      color: "white",
-      backgroundColor: "black",
-      padding: "4px"
-    },
     h1: {
       color: "honeydew"
     },
@@ -28,7 +23,7 @@ Noriega.overrideThemeStyles = () => {
     },
     li: {
       listStyleType: "hiragana-iroha"
-    }
+    },
   };
 };
 

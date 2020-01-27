@@ -10,7 +10,9 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allMarkdownRemark.edges;
+    const posts = data.allMdx.edges.filter(
+      ({ node }) => !node.frontmatter.draft
+    );
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -30,16 +32,19 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               {node.frontmatter.tags ? (
-                <React.Fragment><small style={{color: 'orange'}}>Tags: {node.frontmatter.tags}</small><br/></React.Fragment>
+                <React.Fragment>
+                  <small style={{ color: "orange" }}>
+                    Tags: {node.frontmatter.tags}
+                  </small>
+                  <br />
+                </React.Fragment>
               ) : null}
               <small>{node.frontmatter.date}</small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt
                 }}
-                // style={{ marginBottom: "0.2rem" }}
               />
-              
             </div>
           );
         })}
@@ -57,18 +62,19 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC} ) {
       edges {
         node {
           excerpt
-          fields {
-            slug
-          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
             description
             tags
+            draft
+          }
+          fields {
+            slug
           }
         }
       }
