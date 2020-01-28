@@ -2,6 +2,7 @@
 title: Dec 2019 Kattis
 date: "2019-12-14T00:00:00.000Z"
 description: Refreshing myself with C++
+tags: kattis
 ---
 
 ### Things to be careful of, to avoid WA

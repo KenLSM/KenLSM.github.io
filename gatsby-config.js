@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Ken's Thoughts`,
+    title: `Ken Lee, thoughts and et cetera`,
     author: `Ken Lee`,
-    description: `A blog demonstrating what Ken ken do.`,
+    description: `A blog of what Ken ken do.`,
     social: {
       twitter: `kenleesm`
     },
