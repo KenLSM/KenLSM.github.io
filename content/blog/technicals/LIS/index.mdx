@@ -1,0 +1,82 @@
+---
+title: Length of Longest Increasing Subsequence
+date: "2020-02-29T00:00:00.000Z"
+description: Understanding (and solving) Length of Longest Increasing Subsequence
+tags: draft, kattis, algorithms
+---
+
+
+## Problem
+Given a list of number find the length of the longest increasing subsequence (LIS).
+
+For instance, in an array below:
+```
+[1, 2, 2, 3, 4]
+```
+
+The length of the LIS should be 4.
+```
+[1, 2, 3, 4]
+```
+As `[2, 2]` is not increasing we don't count them.
+
+And in the case of:
+```
+[10, 11, 1, 2, 4, 9, 5, 6, 7]
+```
+The length of the LIS should be 6.
+```
+[1, 2, 4, 5, 6, 7]
+```
+---
+# Solution
+## In Naïveté: O(2^n)
+
+## Storing our Length/Assumption
+Experiment: the longest subsequence when looking at first X.
+
+Look only at the first 3 items
+```
+With vision of:   [10, 11, 1 ]
+LIS is:           [10, 11, ❌]
+```
+
+Look only at the first 5 items
+```
+With vision of:   [10, 11,  1,  2,  3]
+LIS is:           [❌, ❌,  1,  2,  3]
+```
+
+Look only at the first 6 items
+```
+With vision of:   [10, 11,  1,  2,  3, 12]
+LIS is:           [10, 11, ❌, ❌, ❌, 12]
+or                [❌, ❌,  1,  2,  3, ❌]
+```
+
+Look only at the first 7 items
+```
+With vision of:   [10, 11,  1,  2,  3, 12,  7]
+LIS is:           [10, 11, ❌, ❌, ❌, 12, ❌]
+or                [❌, ❌,  1,  2,  3, ❌,  7]
+```
+
+Look only at the first 8 items
+```
+With vision of:   [10, 11,  1,  2,  3, 12,  7,  5]
+LIS is:           [❌, ❌,  1,  2,  3, ❌,  7, ❌]
+or                [❌, ❌,  1,  2,  3, ❌, ❌,  5]
+```
+
+Notice that the incoming number is smaller than the largest in the subsequence.
+Observation:
+- cannot remove historical LIS
+- should duplicate a new array to store items
+  - O(n)
+- find the index that the incoming number can be placed and still maintain increasing subsequence
+  - Linear search: O(n) or;
+  - Binary search: O(logn)
+- insert the incoming number, and cross out the rest of the numbers after incoming number
+  - O(n)
+
+But what about keeping all of them in the same array?
