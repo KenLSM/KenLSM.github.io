@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import Bio from "../components/bio";
+// import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
@@ -36,7 +36,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
           <span style={{ marginLeft: rhythm(1 / 2), color: "lightgray" }}>
-            {post.timeToRead} min{post.timeToRead > 1 ? 's':''} read
+            {post.timeToRead} min{post.timeToRead > 1 ? "s" : ""} read
           </span>
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
