@@ -24,6 +24,9 @@ Noriega.overrideThemeStyles = () => {
     li: {
       listStyleType: "hiragana-iroha"
     },
+    blockquote: {
+      backgroundColor: "black"
+    },
   };
 };
 
