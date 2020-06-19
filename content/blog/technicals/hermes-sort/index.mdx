@@ -1,0 +1,15 @@
+---
+title: Adding Hermes Stable Sort
+date: "2020-06-19T00:00:00.000Z"
+description: Hermes doesn't have a stable sorting algorithm, here's my progress adding them
+tags: hermes, react-native, sort, timsort
+draft: true
+---
+
+As I am working as React Native developer in my day job, I too, have encounted the issue of Array.prototype.sort being [unstable](https://github.com/facebook/hermes/issues/212).
+
+> What? Array.sort is unstable? It's 2020, who is still using an unstable sorting algorithm?
+
+Tht was what my initial thoughts were when I first discovered this fact. FYI, tc39 has [already](https://github.com/tc39/ecma262/pull/1340) specified that Array.prototype.sort should be stable.
+
+After reading through the comments, I was surprised that the 
