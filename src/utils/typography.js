@@ -4,28 +4,36 @@ import Noriega from "typography-theme-noriega";
 Noriega.overrideThemeStyles = () => {
   return {
     "a:-webkit-any-link": {
-      color: "honeydew"
+      color: "honeydew",
+      textDecorationColor: "#cccbff",
     },
     html: {
-      backgroundColor: "darkslateblue"
+      backgroundColor: "darkslateblue",
     },
     body: {
-      color: "navajowhite"
+      color: "navajowhite",
     },
     h1: {
-      color: "honeydew"
+      color: "honeydew",
     },
     h2: {
-      color: "honeydew"
+      color: "honeydew",
     },
     h3: {
-      color: "honeydew"
+      color: "honeydew",
     },
     li: {
-      listStyleType: "hiragana-iroha"
+      listStyleType: "hiragana-iroha",
     },
     blockquote: {
-      backgroundColor: "black"
+      backgroundColor: "#f1f1f1",
+      color: "#1e2e54",
+      margin: "12px",
+      padding: "6px",
+      borderLeftColor: "green",
+      borderLeftWidth: "6px",
+      borderLeftStyle: "solid",
+      fontStyle: "italic",
     },
   };
 };

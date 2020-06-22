@@ -24,11 +24,14 @@ class BlogIndex extends React.Component {
             <div key={node.fields.slug}>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4)
+                  marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
+                <Link
+                  style={{ boxShadow: `none`, textDecoration: "none" }}
+                  to={node.fields.slug}
+                >
+                  > {title}
                 </Link>
               </h3>
               {node.frontmatter.tags ? (
@@ -42,7 +45,7 @@ class BlogIndex extends React.Component {
               <small>{node.frontmatter.date}</small>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt
+                  __html: node.frontmatter.description || node.excerpt,
                 }}
               />
             </div>
@@ -62,7 +65,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC} ) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
