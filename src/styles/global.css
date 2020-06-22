@@ -1,6 +1,34 @@
-li code.language-text{
-      color: white;
-      background-color: black;
-      padding: 4px;
-      font-family: monospace;
-  }
+html {
+  background-color: darkslateblue;
+}
+li code.language-text {
+  color: white;
+  background-color: black;
+  padding: 4px;
+  font-family: monospace;
+}
+a:any-link {
+  color: honeydew;
+  text-decoration: #cccbff;
+}
+
+h1,
+h2,
+h3 {
+  color: honeydew;
+  margin-top: 1em;
+}
+body {
+  color: navajowhite;
+}
+
+blockquote {
+  background-color: #f1f1f1;
+  color: #1e2e54;
+  margin: 12px;
+  padding: 6px;
+  border-left-color: green;
+  border-left-width: 6px;
+  border-left-style: solid;
+  font-style: italic;
+}
