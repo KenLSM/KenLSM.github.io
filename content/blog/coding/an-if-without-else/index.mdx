@@ -6,17 +6,17 @@ tags: monthly, coding, new-to-coding
 draft: false
 ---
 
-`if` and `else`. These two are the iconic duo, in programming. Tell 
-a programmer an `if` and they will response with `else`.
-It is the bread and butter, the building block of a programmer's 
+`if` and `else`. These two are the iconic duo, in programming. Tell
+a programmer an `if` and they will respond with `else`.
+It is the bread and butter, the building block of a programmer's
 life. The next step after `"hello world"`.
 
 And that's the issue.
 
-Having to review quite a number of junior developers' code, 
-I've seen way too many undue usage of `else` and some times `else if`.
-It's true, there are cases which warrants the use of `else`, but there are way more
-cases which doesn't.
+Having to review quite a number of junior developers' code,
+I've seen way too many undue usages of `else` and some times `else if`.
+It's true, there are cases which warrant the use of `else`, but there are way more
+cases which don't.
 
 Let's explore.
 
@@ -28,12 +28,13 @@ Let's take the classic `fizzbuzz` problem.
 ```md
 > Write a program that prints the numbers from 1 to 100.
 > But for multiples of three print "Fizz" instead of
-the number and for the multiples of five print "Buzz".
+> the number and for the multiples of five print "Buzz".
 > For numbers which are multiples of both three and
-five print "FizzBuzz".
+> five print "FizzBuzz".
 ```
 
 The naive solution is as such:
+
 ```python
 def foo(i):
   if i % 15 == 0:
@@ -70,9 +71,10 @@ def foo(i):
   return x
 ```
 
-That above, may be what you might reach. Let's go one more level
+Let's go one more level
 of complexity. If the value is even and is not a multiple of 3 or 5, we want
 to negate the value of it.
+
 ```python
 def foo(i):
   x = ''
@@ -92,11 +94,11 @@ def foo(i):
   return x
 ```
 
-Here we have quite a few alterations done since we have first wrote
+Here we have quite a few alterations done since we have first written
 down the first line of code. What we have achieved is usually what
 happens as your requirements change.
 
-Notice that inorder to fulfull our requirements of returning the data,
+Notice that in order to fulfill our requirements of returning the data,
 we have created a local variable `x` in the first statement of `foo`.
 
 And it was returned on the final statement of `foo`. Given that this
@@ -122,6 +124,6 @@ def foo(i):
   return i
 ```
 
-This allows us to avoid creating a local variable and provides clarity. For isntance,
+This allows us to avoid creating a local variable and provides clarity. For instance,
 when you are tracing code, we are able to immediately observe the scope of the code!
 We don't need to trace what happened to `x` before it was returned!

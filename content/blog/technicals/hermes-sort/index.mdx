@@ -6,18 +6,18 @@ tags: hermes, react-native, sort, timsort
 draft: true
 ---
 
-As I am working as React Native developer in my day job, I too, have encounted the issue of Array.prototype.sort being [unstable](https://github.com/facebook/hermes/issues/212).
+As I am working as React Native developer in my day job, I too, have encountered the issue of Array.prototype.sort being [unstable](https://github.com/facebook/hermes/issues/212).
 
 > What? Array.sort is unstable? It's 2020, who is still using an unstable sorting algorithm?
 
 Tht was what my initial thoughts were when I first discovered this fact. FYI, tc39 has [already](https://github.com/tc39/ecma262/pull/1340) specified that Array.prototype.sort should be stable.
 
-// TO WRITE UP: GRATEFUL; detailed steps, and pointers to start looking
+// TO WRITE UP: GRATEFUL; detailed steps and pointers to start looking
 After reading through the comments, I was surprised that the g
 
 // TO WRITE UP: FEARFUL; large project, with strange tools
 
-How to even build it? What do we need to build? Where's the executeable?
+How to even build it? What do we need to build? Where's the executable?
 
 Typing in those strange commands, which I've to assume it works. With courage I pushed the enter button and lo and behold, there's a whole build folder appearing in front of my eyes.
 
@@ -27,7 +27,7 @@ instead of running the whole test suite through `ninja check-hermes`
 ... ninja tests? - `ninja check-hermes`
 seems to only run test under `hermes/unittests`
 
-Alrighty, got the test cases out, and compilation out. Diving into the code! First, to start, where is the file we should be looking at? As pointed out by `dulinriley`, he adviced us to start looking from `lib/VM/JSLib/Array.cpp` and observe that `arrayPrototypeSort` is the function we are looking at.
+Alrighty, got the test cases out, and compilation out. Diving into the code! First, to start, where is the file we should be looking at? As pointed out by `dulinriley`, he advised us to start looking from `lib/VM/JSLib/Array.cpp` and observe that `arrayPrototypeSort` is the function we are looking at.
 
 ```cpp
   StandardSortModel sm(runtime, O, compareFn);
@@ -41,11 +41,11 @@ Alrighty, got the test cases out, and compilation out. Diving into the code! Fir
   return O.getHermesValue();
 ```
 
-For those that are unfamiliar, `LLVM_UNLIKELY` is an branching optimization for the compiler to opt for a certain path to take.
+For those that are unfamiliar, `LLVM_UNLIKELY` is a branching optimization for the compiler to opt for a certain path to take.
 
 ## Segue into branches
 
-Branches are one of the worst nightmare for a CPU as the CPU cannot utilize [instruction pipeline](https://en.wikipedia.org/wiki/Instruction_pipelining) efficiently as only one of the branch is eventually taken. Work done from the other path, if evaluated, would be discarded. Thus, it has to pick one that is most `LIKELY` to be eventually taken.
+Branches are one of the worst nightmares for a CPU as the CPU cannot utilize [instruction pipeline](https://en.wikipedia.org/wiki/Instruction_pipelining) efficiently as only one of the branch is eventually taken. Work done from the other path, if evaluated, would be discarded. Thus, it has to pick one that is most `LIKELY` to be eventually taken.
 
 ```js
 func foo() {
@@ -60,7 +60,7 @@ func foo() {
 
 The CPU at on L2 can choose to assume that the path would be taken, and begin pipelining `doVeryExpensiveTask()` or do `doVeryTediousTask()`. Either one would be discarded.
 
-Assuming that the CPU would always assume that every branching is taken, then it would waste 99% of its work. While if the CPU assume that every branch is NOT taken, then it would waste only 1% of its work.
+Assuming that the CPU would always assume that every branching is taken, then it would waste 99% of its work. While if the CPU assumes that every branch is NOT taken, then it would waste only 1% of its work.
 
 As a programmer, we can do better. By heuristics/intuition/statistics, we can predict whether the branch would be taken or not, and let the CPU know, through `LLVM_UNLIKELY|LLVM_LIKELY`.
 
@@ -71,7 +71,7 @@ TimSort has quite a number of strategies. And each strategy can be made into its
 ## Standard Issues
 
 These are standard issue sorting implementations which is utilized within TimSort.
-`Binary Sort`, the utilzied to extend merge sorts runs
+`Binary Sort`, the algorithm utilized to extend merge sorts runs
 
 - based off insertion + binary search to insert?
 
@@ -95,7 +95,7 @@ Opting to use insertion sort for small-sized arrays
 
 # Phase 1: Init
 
-TimState. A state to keep track of various states we would require. As TimSort is an adaptive sorting algorthim, we would be referencing those states to decide our next best choice.
+TimState. A state to keep track of various states we would require. As TimSort is an adaptive sorting algorithm, we would be referencing those states to decide our next best choice.
 
 Creating merge state
 
@@ -113,7 +113,7 @@ What is minrun?
 
 Why minrun is important?
 
-- a bad minrun can setup a situation where mergesort is non-ideal
+- a bad minrun can set up a situation where mergesort is non-ideal
 
 ```
 // bad run
@@ -162,7 +162,7 @@ To find a "good" minrun, we must first define what is "good".
 
 In Peter's listsort.txt, he explained, minrun should be a number that puts q to be a power of 2, or strictly less than a power of 2. We can freely choose a minrun, as that doesn't have any restriction.
 
-The formular given by Peter was to take a first 6 bits and add 1 if any of the remaining bits were set.
+The formula given by Peter was to take a first 6 bits and add 1 if any of the remaining bits were set.
 
 ```
 Given
@@ -186,7 +186,7 @@ Take a look again at the
 +-------------+
 ```
 
-And switch to base 10 (as us humans are more adapt with it).
+And switch to base 10 (as us humans are more adept with it).
 
 ```
 +------------+

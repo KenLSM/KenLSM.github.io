@@ -37,7 +37,7 @@ tags: kattis
 
 ### Problems I'm able to solve
 
-- math based
+- math-based
 - general knowledge
 - dp
 

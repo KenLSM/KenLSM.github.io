@@ -8,7 +8,7 @@ draft: false
 
 Animation.
 
-One of the most entertaining, and time-consuming, features to implement. The journey is long, but rewarding. This story is one that I was tasked to do.
+One of the most entertaining, and time-consuming, features to implement. The journey is long but rewarding. This story is one that I was tasked to do.
 
 I was working on a list, say a todo list, in which the user can add a new element to the top of the list. Upon inserting, it animate its background from yellow to white.
 
@@ -35,10 +35,11 @@ li {
   margin-bottom: 4px;
 }
 ```
+
 However, for React Native, we do not have the luxury of CSS Animations. Thus, needing to rely on our old trusty `Animated`.
 
 ```jsx
-import { Animated } from 'react-native';
+import { Animated } from "react-native";
 
 class ListItemWithFade extends React.Component {
   constructor(props) {
@@ -54,15 +55,15 @@ class ListItemWithFade extends React.Component {
         toValue: 1,
         duration: 500,
         useNativeDriver: true,
-      })
-    ])
+      }),
+    ]);
   }
 
   render() {
     const background = this.opacity.interpolate({
       inputRage: [0, 1],
-      outputRange: ['yellow', "transparent"]
-    })
+      outputRange: ["yellow", "transparent"],
+    });
     return (
       <Animated.View style={{ background }}>
         {this.props.children}
@@ -71,22 +72,19 @@ class ListItemWithFade extends React.Component {
   }
 }
 ```
+
 // ...
 
 ```jsx
 const MyList = ({ listItems }) => {
   return (
     <View>
-      {listItems.map(item =>
-        item.isAnimating ? (
-          <ListItemWithFade />
-        ) : (
-          <ListItem item={item} />
-        )
+      {listItems.map((item) =>
+        item.isAnimating ? <ListItemWithFade /> : <ListItem item={item} />
       )}
     </View>
   );
-}
+};
 ```
 
 When this code is executed, you will observe that the first time we add an item to the list, the animation works.
@@ -117,7 +115,7 @@ its the **second** list item (watch me animate) that instantiates a new `<ListIt
 </MyList>
 ```
 
-Thus, in order for us to overcome this we need to isolate our animated value.
+Thus, in order for us to overcome this, we need to isolate our animated value.
 We also need to communicate to the other `<ListItemWithFade />` object that "hey this animation had already begun, please use this value".
 
 In our `<ListItemWithFade />` class, we can add an `opacityMap`, as a static property of ListItemWithFade,
@@ -126,19 +124,19 @@ which will keep track of our animation progress.
 And when we are rendering, we query for the correct instance of our animation progress.
 
 ```jsx
-import { Animated } from 'react-native';
+import { Animated } from "react-native";
 
 class ListItemWithFade extends React.Component {
-   static opacityMap = {};
+  static opacityMap = {};
 
   constructor(props) {
     super(props);
-    
+
     this.startAnimation();
   }
 
   static getOpacity(key) {
-    if(ListItemWithFade.opacityMap[key] === undefined) {
+    if (ListItemWithFade.opacityMap[key] === undefined) {
       ListItemWithFade.opacityMap[key] = new Animated.Value(0);
     }
 
@@ -157,15 +155,15 @@ class ListItemWithFade extends React.Component {
         toValue: 1,
         duration: 500,
         useNativeDriver: true,
-      })
-    ])
+      }),
+    ]);
   }
 
   render() {
     const background = this.getOwnOpacity().interpolate({
       inputRage: [0, 1],
-      outputRange: ['yellow', "transparent"]
-    })
+      outputRange: ["yellow", "transparent"],
+    });
     return (
       <Animated.View style={{ background }}>
         {this.props.children}
@@ -178,6 +176,3 @@ class ListItemWithFade extends React.Component {
 And there we have it, a solution to our animation problem!
 
 ![Animating with memory](./list-correct.gif)
-
-
-

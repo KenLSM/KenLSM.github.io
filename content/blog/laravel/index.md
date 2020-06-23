@@ -4,9 +4,9 @@ date: "2017-01-10T00:00:00.000Z"
 description: Setting up Laravel + Homestead
 ---
 
-Setting up Laravel had been a pain in the ass for me, due to the fact that I have not used all these technology stacks before (I'm more familiar with Django and Node.js).
+Setting up Laravel had been a pain in the ass for me, since I have not used all these technology stacks before (I'm more familiar with Django and Node.js).
 
-Thus, hopefully I can help you alleviate your pain.
+Thus, hopefully, I can help you alleviate your pain.
 
 The image below is what you should see once you have properly setup Laravel + Homestead for both Windows and Mac users.
 ![Laravel Success](./laravel_scrn.png)
@@ -33,7 +33,7 @@ There shouldn't be much of an issue installing this. No additional configuration
 Once you are done, download and install Vagrant [here](https://www.vagrantup.com/downloads.html).
 
 ![Vagrant](./vagrant.jpg)
-Well for me, I had encountered some issues. The Windows Install package could not run a required DLL. Note: It is fine, if you do not see this popup.
+Well for me, I had encountered some issues. The Windows Install package could not run a required DLL. Note: It is fine if you do not see this popup.
 ![Vagrant Error](./vagrant_err.jpg)
 Well, the issue was that this setup didn't have the necessary permission. Solution? Open Command Prompt as an administrator (right-click on Command Prompt and select Run as Administrator) and type in this line:
 
@@ -53,7 +53,7 @@ Now to download the Homestead box. Simply run this line:
 vagrant box add laravel/homestead
 ```
 
-This may take a few minutes to complete as Vagrant searches the specified box to download from their public box catalog.
+This may take a few minutes to complete as Vagrant searches the specified box to download from their public box catalogue.
 
 Once done, we will install Homestead.
 
@@ -81,7 +81,7 @@ Next clone the Homestead git repository:
 git clone https://github.com/laravel/homestead.git Homestead
 ```
 
-Now to create and copy some configuration files for Homestead. Navigate to the newly clone repository, we did this in the above command(named Homestead), and run the init file:
+Now to create and copy some configuration files for Homestead. Navigate to the newly cloned repository, we did this in the above command(named Homestead), and run the init file:
 
 For Windows:
 
@@ -122,7 +122,7 @@ Awesome! That's all for the installation.
 
 Creating a test App
 
-Now to create a test app to make sure that everything has been setup right.
+Now to create a test app to make sure that everything has been set up right.
 Create a folder called Code in your home directory, and navigate to it. Then run this:
 
 ```
@@ -161,4 +161,4 @@ vagrant up
 Access your website by going to 192.168.10.10
 ![Laravel Success](./laravel_scrn.png)
 
-And hopefully that's what you'll see!
+And that's what you'll see!

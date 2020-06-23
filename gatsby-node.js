@@ -1,7 +1,7 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-const getPreviousPostsWithPrecate = (posts, funcPredicate, beginIdx) => {
+const getPreviousPostsWithPredicate = (posts, funcPredicate, beginIdx) => {
   for (let i = beginIdx; i < posts.length; i++) {
     if (funcPredicate(posts[i])) {
       return posts[i];
@@ -10,7 +10,7 @@ const getPreviousPostsWithPrecate = (posts, funcPredicate, beginIdx) => {
   return {};
 };
 
-const getNextPostsWithPrecate = (posts, funcPredicate, beginIdx) => {
+const getNextPostsWithPredicate = (posts, funcPredicate, beginIdx) => {
   for (let i = beginIdx; i > 0; i--) {
     if (funcPredicate(posts[i])) {
       return posts[i];
@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const previous =
       index === posts.length - 1
         ? null
-        : getPreviousPostsWithPrecate(
+        : getPreviousPostsWithPredicate(
           posts,
           f => f.node.frontmatter.draft !== true,
           index + 1
@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const next =
       index === 0
         ? null
-        : getNextPostsWithPrecate(
+        : getNextPostsWithPredicate(
           posts,
           f => f.node.frontmatter.draft !== true,
           index - 1

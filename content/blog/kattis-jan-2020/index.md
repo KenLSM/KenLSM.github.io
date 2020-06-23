@@ -5,27 +5,27 @@ description: Rememberance of my Math and CS lectures
 tags: kattis
 ---
 
-Just before 2019 ended, Jen and I set out to review and plan our one year resolution for the year of 2020, AKA, new year resolution. As part of my list of resolutions, I had set myself to reach a certain goal in kattis. It will be a busy yet exciting year ahead :)
+Just before 2019 ended, Jen and I set out to review and plan our one-year resolution for the year of 2020, AKA, new year resolution. As part of my list of resolutions, I had set myself to reach a certain goal in kattis. It will be a busy yet exciting year ahead :)
 
 ### Things to be careful of, to avoid WA
 
 ---
 
-1. `map.insert` doesn't replace value if it exist
+1. `map.insert` doesn't replace value if it exists
    had to insert and then find and replace again
 
    using `map['foo'] = bar` is simpler
 
 2. `#include <iomanip>` [DOCS](https://en.cppreference.com/w/cpp/io/manip) for various io manipulation, such as `setw`, `setfill`, `hex`, and `uppercase`
 
-### Things to be care of, to avoid TLE
+### Things to be careful of, to avoid TLE
 
 1.
 
 ### Shorthands that are useful
 
 1. define query variables as global
-   antipattern IRL, but we are problem solving instead of software building :P
+   antipattern IRL, but we are problem-solving instead of software building :P
 2. `#define psi pair<string, int>` for map usage
 
 3. `stringstream ss(query)` is useful if needed to tokenize
