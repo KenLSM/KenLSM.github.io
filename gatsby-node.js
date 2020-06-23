@@ -7,6 +7,7 @@ const getPreviousPostsWithPrecate = (posts, funcPredicate, beginIdx) => {
       return posts[i];
     }
   }
+  return {};
 };
 
 const getNextPostsWithPrecate = (posts, funcPredicate, beginIdx) => {
@@ -15,6 +16,7 @@ const getNextPostsWithPrecate = (posts, funcPredicate, beginIdx) => {
       return posts[i];
     }
   }
+  return {};
 };
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -56,18 +58,18 @@ exports.createPages = async ({ graphql, actions }) => {
       index === posts.length - 1
         ? null
         : getPreviousPostsWithPrecate(
-            posts,
-            f => f.node.frontmatter.draft === false,
-            index + 1
-          )?.node;
+          posts,
+          f => f.node.frontmatter.draft !== true,
+          index + 1
+        ).node;
     const next =
       index === 0
         ? null
         : getNextPostsWithPrecate(
-            posts,
-            f => f.node.frontmatter.draft === false,
-            index - 1
-          )?.node;
+          posts,
+          f => f.node.frontmatter.draft !== true,
+          index - 1
+        ).node;
 
     createPage({
       path: post.node.fields.slug,
