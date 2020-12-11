@@ -1,5 +1,5 @@
 ---
-title: Adding Hermes Stable Sort
+title: Adding Hermes Stable Sort Part 1
 date: "2020-06-19T00:00:00.000Z"
 description: Hermes doesn't have a stable sorting algorithm, here's my progress adding them
 tags: hermes, react-native, sort, timsort
@@ -12,14 +12,11 @@ As I am working as React Native developer in my day job, I too, have encountered
 
 Tht was what my initial thoughts were when I first discovered this fact. FYI, tc39 has [already](https://github.com/tc39/ecma262/pull/1340) specified that Array.prototype.sort should be stable.
 
-// TO WRITE UP: GRATEFUL; detailed steps and pointers to start looking
-After reading through the comments, I was surprised that the g
+As one of the contributors had mentioned that React Native is an open-sourced project, we can make a pull request to add it. And that's what I will attempt to do. :)
 
-// TO WRITE UP: FEARFUL; large project, with strange tools
+After spending some time mucking around the codebase, these were my questions in mind. How to build hermes? What do we need to build? Where's the executable?
 
-How to even build it? What do we need to build? Where's the executable?
-
-Typing in those strange commands, which I've to assume it works. With courage I pushed the enter button and lo and behold, there's a whole build folder appearing in front of my eyes.
+Typing in those strange commands found on the readme, which I've to assume it works, with courage I pushed the enter button and lo and behold, there's a whole build folder appearing in front of my eyes.
 
 Running tests
 ... hermes tests - issit the same as test262? - recommended to add tests under `hermes/test/hermes/array-functions.js` - added some dumb tests there, no idea how to run the tests - using `build/bin/hermes -target=HBC -O hermes/test/hermes/array-functions.js`
@@ -188,11 +185,41 @@ Take a look again at the
 
 And switch to base 10 (as us humans are more adept with it).
 
+We want to find a minrun that puts q to be a power of 10^n, or strictly less than 10^n, our minrun will take the first two digits and add 1 if any of the remaining digits were more than 1.
+
+What we want to achieve is a good minrun that will give us a Q that is close to
+
 ```
-+------------+
-|101100111000|
-+------------+
++------+
+|123400|
++------+
+minrun                  = 12 + 1
+Q = floor(123400/13)    = 9400
+R = 123400 - Q * minrun = 4
 ```
+
+Notice how this algorithm brings our number close to 10^4 (10,000)?
+
+This works through selecting a divisor that is at or slightly larger than the
+We add 1 if the remaining bits are set as those would spill over to the remainder. For instance:
+
+```
++----+
+|1234|
++----+
+-> in this form
++-------------+
+|  Q   |   R  |
++-------------+
+-> looks like this
++-----+
+|12|34|
++-----+
+
+1234 = 1200 + 34
+```
+
+As we can observe, 1200 is equivalent to 100 \* 12, which fits perfectly to our requirements of Q being a power of 10^n. However, the remainder of 34 breaks this whole equation up. Consequently, if we add 1 to the divisor and the new divisor to be 13, Q will still be a number smaller and close to 10^n!
 
 # Phase 2:
 
