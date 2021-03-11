@@ -4,9 +4,9 @@ module.exports = {
     author: `Ken Lee`,
     description: `A blog of what Ken ken do.`,
     social: {
-      twitter: `kenleesm`
+      twitter: `kenleesm`,
     },
-    siteUrl: `https://kenlsm.com`
+    siteUrl: `https://kenlsm.com`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -14,31 +14,31 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`
-      }
+        name: `blog`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`
-      }
+        name: `assets`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-65011530-5`
-      }
+        trackingId: `UA-65011530-5`,
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
@@ -48,14 +48,14 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
-            }
+              maxWidth: 590,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -100,33 +100,33 @@ module.exports = {
                   language: "superscript",
                   extend: "javascript",
                   definition: {
-                    superscript_types: /(SuperType)/
+                    superscript_types: /(SuperType)/,
                   },
                   insertBefore: {
                     function: {
-                      superscript_keywords: /(superif|superelse)/
-                    }
-                  }
-                }
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
               ],
               // Customize the prompt used in shell output
               // Values below are default
               prompt: {
                 user: "root",
                 host: "localhost",
-                global: false
+                global: false,
               },
               // By default the HTML entities <>&'" are escaped.
               // Add additional HTML escapes by providing a mapping
               // of HTML entities and their escape value IE: { '}': '&#123;' }
-              escapeEntities: {}
-            }
+              escapeEntities: {},
+            },
           },
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
-        ]
-      }
-    }
+          `gatsby-remark-smartypants`,
+        ],
+      },
+    },
   ],
-  pathPrefix: "/kenthoughts"
+  pathPrefix: "/kenthoughts",
 };
