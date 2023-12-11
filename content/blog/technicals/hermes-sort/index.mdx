@@ -3,7 +3,7 @@ title: Adding Hermes Stable Sort Part 1
 date: "2020-06-19T00:00:00.000Z"
 description: Hermes doesn't have a stable sorting algorithm, here's my progress adding them
 tags: hermes, react-native, sort, timsort
-draft: true
+draft: false
 ---
 
 As I am working as React Native developer in my day job, I too, have encountered the issue of Array.prototype.sort being [unstable](https://github.com/facebook/hermes/issues/212).
@@ -18,13 +18,9 @@ After spending some time mucking around the codebase, these were my questions in
 
 Typing in those strange commands found on the readme, which I've to assume it works, with courage I pushed the enter button and lo and behold, there's a whole build folder appearing in front of my eyes.
 
-Running tests
-... hermes tests - issit the same as test262? - recommended to add tests under `hermes/test/hermes/array-functions.js` - added some dumb tests there, no idea how to run the tests - using `build/bin/hermes -target=HBC -O hermes/test/hermes/array-functions.js`
-instead of running the whole test suite through `ninja check-hermes`
-... ninja tests? - `ninja check-hermes`
-seems to only run test under `hermes/unittests`
+After a few hours of bashing around I've managed to get throught the tests and now we're able to get to the next step.
 
-Alrighty, got the test cases out, and compilation out. Diving into the code! First, to start, where is the file we should be looking at? As pointed out by `dulinriley`, he advised us to start looking from `lib/VM/JSLib/Array.cpp` and observe that `arrayPrototypeSort` is the function we are looking at.
+Diving into the code! First, to start, where is the file we should be looking at? As pointed out by `dulinriley`, he advised us to start looking from `lib/VM/JSLib/Array.cpp` and observe that `arrayPrototypeSort` is the function we are looking at.
 
 ```cpp
   StandardSortModel sm(runtime, O, compareFn);
@@ -222,6 +218,8 @@ We add 1 if the remaining bits are set as those would spill over to the remainde
 As we can observe, 1200 is equivalent to 100 \* 12, which fits perfectly to our requirements of Q being a power of 10^n. However, the remainder of 34 breaks this whole equation up. Consequently, if we add 1 to the divisor and the new divisor to be 13, Q will still be a number smaller and close to 10^n!
 
 # Phase 2:
+
+TBC
 
 ## References
 
