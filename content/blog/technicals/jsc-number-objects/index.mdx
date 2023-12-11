@@ -26,3 +26,5 @@ obj[123456] = ":)"; // memory spike is gone
 Well, why would this even happen? Why would storing objects, which probably reasonable for us to assume that it will be stored as a `dict` i.e., `hashtables` would be grabbing a whole bunch of memory?
 
 > I don't recall exactly how much memory it took, but it was around the ballpark values of 10mb
+
+It turns out that the jsc has an optimization where objects that only contains integer keys would be initialized as an array!
