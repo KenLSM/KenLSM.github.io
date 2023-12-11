@@ -13,6 +13,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
 
+    const totalTimeToRead = post.frontmatter.codeReadTimes + post.timeToRead;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -22,7 +23,7 @@ class BlogPostTemplate extends React.Component {
         <h1
           style={{
             marginTop: rhythm(1),
-            marginBottom: 0
+            marginBottom: 0,
           }}
         >
           {post.frontmatter.title}
@@ -31,18 +32,18 @@ class BlogPostTemplate extends React.Component {
           style={{
             ...scale(-1 / 5),
             display: `block`,
-            marginBottom: rhythm(1)
+            marginBottom: rhythm(1),
           }}
         >
           {post.frontmatter.date}
           <span style={{ marginLeft: rhythm(1 / 2), color: "lightgray" }}>
-            {post.timeToRead} min{post.timeToRead > 1 ? "s" : ""} read
+            {totalTimeToRead} min{totalTimeToRead > 1 ? "s" : ""} read
           </span>
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr
           style={{
-            marginBottom: rhythm(1)
+            marginBottom: rhythm(1),
           }}
         />
 
@@ -71,7 +72,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-      </Layout >
+      </Layout>
     );
   }
 }
@@ -93,6 +94,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        codeReadTimes
       }
       fields {
         slug

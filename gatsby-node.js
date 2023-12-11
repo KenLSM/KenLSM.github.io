@@ -11,7 +11,7 @@ const getPreviousPostsWithPredicate = (posts, funcPredicate, beginIdx) => {
 };
 
 const getNextPostsWithPredicate = (posts, funcPredicate, beginIdx) => {
-  for (let i = beginIdx; i > 0; i--) {
+  for (let i = beginIdx; i >= 0; i--) {
     if (funcPredicate(posts[i])) {
       return posts[i];
     }
@@ -58,18 +58,18 @@ exports.createPages = async ({ graphql, actions }) => {
       index === posts.length - 1
         ? null
         : getPreviousPostsWithPredicate(
-          posts,
-          f => f.node.frontmatter.draft !== true,
-          index + 1
-        ).node;
+            posts,
+            (f) => f.node.frontmatter.draft !== true,
+            index + 1
+          ).node;
     const next =
       index === 0
         ? null
         : getNextPostsWithPredicate(
-          posts,
-          f => f.node.frontmatter.draft !== true,
-          index - 1
-        ).node;
+            posts,
+            (f) => f.node.frontmatter.draft !== true,
+            index - 1
+          ).node;
 
     createPage({
       path: post.node.fields.slug,
@@ -77,8 +77,8 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: post.node.fields.slug,
         previous,
-        next
-      }
+        next,
+      },
     });
   });
 };
@@ -91,7 +91,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value,
     });
   }
 };
