@@ -4,7 +4,7 @@ module.exports = {
     author: `Ken Lee`,
     description: `A blog of what Ken ken do.`,
     social: {
-      twitter: `kenleesm`,
+      twitter: `kenlsm53793`,
     },
     siteUrl: `https://kenlsm.com`,
   },
