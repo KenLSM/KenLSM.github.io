@@ -76,7 +76,7 @@ https://open.kattis.com/problems/ants
 
 https://open.kattis.com/problems/thekingofthenorth (maze/graph)
 
-<!-- commented out section
+{/* commented out section
 #### 13 Dec
 
 Score: 163.7 Rank: 2595
@@ -115,5 +115,4 @@ Score: 241.8 Rank: 1613
 
 ### 1 Jan
 
-Score
--->
+Score */}

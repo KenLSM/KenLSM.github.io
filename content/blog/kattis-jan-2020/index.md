@@ -51,7 +51,9 @@ https://open.kattis.com/problems/bard (WA)
 https://open.kattis.com/problems/continuousmedian (WA)
 https://open.kattis.com/problems/narrowartgallery (no solution)
 
-<!-- commented out section
+
+{/*
+commented out section
 
 ### 1 Jan
 
@@ -72,4 +74,4 @@ Score: 270.0 Rank: 1400
 ### 18 Jan
 
 Score: 280.5 Rank: 1333
--->
+*/}
