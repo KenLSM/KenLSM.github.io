@@ -1,9 +1,9 @@
 {
-  "name": "kenthoughts",
-  "version": "1.0.0",
+  "name": "ken-thoughts",
+  "version": "0.2.0",
   "private": true,
-  "description": "kenthoughts",
-  "author": "kenlsm",
+  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "author": "Ken Lee <kenlsm@outlook.com>",
   "keywords": [
     "gatsby"
   ],
@@ -45,5 +45,12 @@
     "eslint-config-prettier": "^9.1.0",
     "prettier": "3.1.1",
     "typescript": "^5.3.3"
+  },
+  "homepage": "https://github.com/KenLSM/KenLSM.github.io#readme",
+  "license": "MIT",
+  "main": "n/a",
+  "repository": "git+https://github.com/KenLSM/KenLSM.github.io.git",
+  "engines": {
+    "node": "^20"
   }
 }
