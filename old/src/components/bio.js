@@ -11,7 +11,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { rhythm } from "../utils/typography";
 
-const Bio = ({ short }) => {
+const Bio = ({ short }, children) => {
+  console.log({children})
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.*/" }) {

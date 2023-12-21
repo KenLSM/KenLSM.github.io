@@ -1,5 +1,8 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const readingTime = require("reading-time");
+
+const blogPost = path.resolve(`./src/templates/blog-post.js`);
 
 const getPreviousPostsWithPredicate = (posts, funcPredicate, beginIdx) => {
   for (let i = beginIdx; i < posts.length; i++) {
@@ -22,7 +25,6 @@ const getNextPostsWithPredicate = (posts, funcPredicate, beginIdx) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`);
   const result = await graphql(
     `
       {
@@ -38,6 +40,9 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 draft
+              }     
+                 internal {
+                contentFilePath
               }
             }
           }
@@ -74,6 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: post.node.fields.slug,
       component: blogPost,
+      // component: `${blogPost}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -93,5 +99,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     });
+
+    createNodeField({
+      node,
+      name: `timeToRead`,
+      value: readingTime(node.body)
+    })
   }
 };

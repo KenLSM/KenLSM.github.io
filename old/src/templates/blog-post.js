@@ -1,21 +1,22 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 
 // import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.mdx;
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next } = this.props.pageContext;
-
-    const totalTimeToRead = post.frontmatter.codeReadTimes + post.timeToRead;
+const BlogPostTemplate = ({data, pageContext, location, html}) => {
+  
+    const post = data.mdx;
+    // const children = data.mdx.children
+    const siteTitle = data.site.siteMetadata.title;
+    const { previous, next } = pageContext;
+// console.log({props:this.props})
+    // const totalTimeToRead = post.frontmatter.codeReadTimes + post.timeToRead;
+    const totalTimeToRead = '1'
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={location} title={siteTitle}>
         <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -40,7 +41,13 @@ class BlogPostTemplate extends React.Component {
             {totalTimeToRead} min{totalTimeToRead > 1 ? "s" : ""} read
           </span>
         </p>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <div
+            // className={styles.blogPost}
+            dangerouslySetInnerHTML={{
+              __html: html,
+            }}
+          />
+        {/* {children} */}
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -75,7 +82,6 @@ class BlogPostTemplate extends React.Component {
       </Layout>
     );
   }
-}
 
 export default BlogPostTemplate;
 
@@ -99,8 +105,13 @@ export const pageQuery = graphql`
       fields {
         slug
       }
-      body
-      timeToRead
     }
   }
 `;
+
+      // timeToRead {
+        //   minutes
+        //   text
+        //   time
+        //   words
+        // }
