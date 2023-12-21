@@ -26,7 +26,7 @@ const BlogPostTemplate = ({
         {children}
         <hr />
         <footer>
-          <Bio />
+          <Bio short />
         </footer>
       </article>
       <nav className="blog-post-nav">
