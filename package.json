@@ -19,6 +19,7 @@
     "@fontsource-variable/montserrat": "^5.0.17",
     "@fontsource/merriweather": "^5.0.8",
     "@mdx-js/react": "^2.3.0",
+    "@types/typography": "^0.16.7",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "eslint": "^8.56.0",
     "gatsby": "^5.13.0",
@@ -27,6 +28,7 @@
     "gatsby-plugin-manifest": "^5.13.0",
     "gatsby-plugin-mdx": "^5.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
+    "gatsby-plugin-typography": "^5.13.0",
     "gatsby-remark-copy-linked-files": "^6.13.0",
     "gatsby-remark-images": "^7.13.0",
     "gatsby-remark-prismjs": "^7.13.0",
@@ -43,9 +45,11 @@
     "typography": "^0.16.24"
   },
   "devDependencies": {
+    "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/parser": "^6.15.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "3.1.1",
     "typescript": "^5.3.3"

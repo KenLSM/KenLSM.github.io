@@ -1,4 +1,4 @@
-const path = require("path")
+import path from "path"
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
@@ -18,14 +18,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
             frontmatter {
-              title
+              title 
               draft
             }     
             internal {
               contentFilePath
             }
           }
-        }
+        } 
       }
     `)
 
