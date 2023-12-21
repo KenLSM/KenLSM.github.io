@@ -36,7 +36,9 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.33.1"
+    "react-typography": "^0.16.23",
+    "sharp": "^0.33.1",
+    "typography": "^0.16.24"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
@@ -48,8 +50,6 @@
   },
   "homepage": "https://github.com/KenLSM/KenLSM.github.io#readme",
   "license": "MIT",
-  "main": "n/a",
-  "repository": "git+https://github.com/KenLSM/KenLSM.github.io.git",
   "engines": {
     "node": "^20"
   }
