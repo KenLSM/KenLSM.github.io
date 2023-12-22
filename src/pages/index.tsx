@@ -21,26 +21,15 @@ type DataProps = {
         date: string;
         title: string;
         description: string;
+        draft?: boolean;
+        tags?: string;
       };
     }[];
   };
 };
 const BlogIndex: React.FC<PageProps<DataProps>> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const posts = data.allMdx.nodes;
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    );
-  }
+  const posts = data.allMdx.nodes.filter((node) => !node.frontmatter.draft);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -63,6 +52,14 @@ const BlogIndex: React.FC<PageProps<DataProps>> = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
+                  {post.frontmatter.tags ? (
+                    <React.Fragment>
+                      <small style={{ color: "orange" }}>
+                        Tags: {post.frontmatter.tags}
+                      </small>
+                      <br />
+                    </React.Fragment>
+                  ) : null}
                   <small>{post.frontmatter.date}</small>
                 </header>
                 <section>
@@ -108,6 +105,8 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
+          draft
         }
       }
     }
