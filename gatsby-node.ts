@@ -1,5 +1,6 @@
 import path from "path"
 import { createFilePath } from "gatsby-source-filesystem"
+import readingTime from "reading-time";
 
 const getPreviousPostsWithPredicate = <T>(nodes: T[], funcPredicate: (f: T) => boolean, beginIdx: number): T | null => {
   for (let i = beginIdx; i < nodes.length; i++) {
@@ -126,6 +127,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+    createNodeField({
+      name: 'timeToRead',
+      node,
+      value: readingTime(node.body)
     })
   }
 }
