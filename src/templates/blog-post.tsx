@@ -5,11 +5,9 @@ import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
-const BlogPostTemplate = ({
-  data: { previous, next, site, mdx: post },
-  location,
-  children,
-}) => {
+const BlogPostTemplate = ({ data, pageContext, location, children }) => {
+  const { site, mdx: post } = data;
+  const { previousPost, nextPost } = pageContext;
   const siteTitle = site.siteMetadata?.title || `Title`;
 
   return (
@@ -40,16 +38,16 @@ const BlogPostTemplate = ({
           }}
         >
           <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+            {previousPost && (
+              <Link to={previousPost.fields.slug} rel="prev">
+                ← {previousPost.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+            {nextPost && (
+              <Link to={nextPost.fields.slug} rel="next">
+                {nextPost.frontmatter.title} →
               </Link>
             )}
           </li>
@@ -71,30 +69,9 @@ export const Head = ({ data: { mdx: post } }) => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $previousPostId: String
-    $nextPostId: String
-    $slug: String
-  ) {
+  query BlogPostBySlug($slug: String) {
     site {
       siteMetadata {
-        title
-      }
-    }
-
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
         title
       }
     }
