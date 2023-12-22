@@ -2,29 +2,27 @@
  * Bio component that queries for data
  * with Gatsby's useStaticQuery component
  *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
+ * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import React from "react";
+import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { rhythm } from "../utils/typography";
+const profilePicSrc = "../images/profile-pic.png";
 
-const Bio = ({ short }) => {
-  const data = useStaticQuery(graphql`
+type BioProps = {
+  short?: boolean;
+};
+const Bio = ({ short }: BioProps) => {
+  const { site } = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.*/" }) {
-        childImageSharp {
-         gatsbyImageData(
-          width: 100
-          layout: FIXED
-          )
-        }
-      }
       site {
         siteMetadata {
-          author
+          author {
+            name
+          }
           social {
             twitter
           }
@@ -33,32 +31,35 @@ const Bio = ({ short }) => {
     }
   `);
 
-  const { author, social } = data.site.siteMetadata;
-  const image = getImage(data.avatar.childImageSharp)
+  const { author, social } = site.siteMetadata;
   return (
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5)
+        marginBottom: rhythm(2.5),
       }}
     >
-      <GatsbyImage
-        image={image}
-        alt={author}
+      <StaticImage
+        src={profilePicSrc}
+        alt={author.name}
+        placeholder="blurred"
+        layout="fixed"
+        width={100}
         style={{
           flexShrink: 0,
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
           minWidth: rhythm(5 / 2),
-          borderRadius: `100%`
+          borderRadius: `100%`,
         }}
         imgStyle={{
-          borderRadius: `50%`
+          borderRadius: `50%`,
         }}
       />
       <div>
         <p style={{ marginBottom: 0 }}>
-          I'm <a href={`https://twitter.com/${social.twitter}`}>{author}</a> 🇸🇬
+          I'm{" "}
+          <a href={`https://twitter.com/${social.twitter}`}>{author.name}</a> 🇸🇬
         </p>
         <p>
           {short
