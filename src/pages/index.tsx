@@ -1,9 +1,9 @@
-import * as React from "react";
-import { Link, PageProps, graphql } from "gatsby";
+import { Link, PageProps, graphql } from 'gatsby';
+import * as React from 'react';
 
-import Bio from "../components/bio";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
 
 type DataProps = {
   site: {
@@ -54,9 +54,7 @@ const BlogIndex: React.FC<PageProps<DataProps>> = ({ data, location }) => {
                   </h2>
                   {post.frontmatter.tags ? (
                     <React.Fragment>
-                      <small style={{ color: "orange" }}>
-                        Tags: {post.frontmatter.tags}
-                      </small>
+                      <small>Tags: {post.frontmatter.tags}</small>
                       <br />
                     </React.Fragment>
                   ) : null}

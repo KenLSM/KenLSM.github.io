@@ -1,38 +1,25 @@
-import * as React from "react";
-import { Link } from "gatsby";
-import { rhythm, scale } from "../utils/typography";
+import { Link } from 'gatsby';
+import * as React from 'react';
+
+import { rhythm, scale } from '../utils/typography';
 
 const Layout = ({ location, title, children }): React.JSX.Element => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
   let header;
 
-  if (isRootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    );
-  } else {
-    header = (
+  header = (
+    <div
+      style={{
+        fontFamily: `Montserrat, sans-serif`,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'baseline',
+      }}
+    >
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
+          margin: 0,
         }}
       >
         <Link
@@ -45,8 +32,30 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
           {title}
         </Link>
       </h3>
-    );
-  }
+
+      <div>
+        <Link
+          style={{
+            boxShadow: `none`,
+            textDecoration: `none`,
+          }}
+          to={`/me`}
+        >
+          about
+        </Link>
+        <Link
+          style={{
+            boxShadow: `none`,
+            textDecoration: `none`,
+            paddingLeft: rhythm(1),
+          }}
+          to={`/`}
+        >
+          blog
+        </Link>
+      </div>
+    </div>
+  );
 
   return (
     <div
