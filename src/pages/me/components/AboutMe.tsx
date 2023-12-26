@@ -5,29 +5,48 @@ const WorkGroupContainer = ({ children }: { children?: React.ReactNode }) => (
   <div style={{ marginBottom: '2rem' }}>{children}</div>
 );
 
+const SkillsGroupContent = ({ children }: { children?: React.ReactNode }) => (
+  <div>{children}</div>
+);
+
 const AboutMe = () => (
   <div>
     <h1>About Me</h1>
     <WorkGroupContainer>
       <p>I'm working at OGP as a Senior Software Engineer where I help:</p>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <ul>
-          <li>
-            Leading the payment initiative to see it being released, and
-            spearheading multiple core features as the tech lead for payments
-          </li>
-          <li>
-            Improving signify's FE through introduction of best practices and
-            organization of FE components
-          </li>
-          <li>
-            Improving FormSG engineering efficiencies through introduction of
-            tools and practices
-          </li>
-        </ul>
+        <div>
+          <ul>
+            <li>
+              Leading the payment initiative to see it being released, and
+              spearheading multiple core features as the tech lead for payments
+            </li>
+            <li>
+              Improving signify's FE through introduction of best practices and
+              organization of FE components
+            </li>
+            <li>
+              Improving FormSG engineering efficiencies through introduction of
+              tools and practices
+            </li>
+          </ul>
+        </div>
+        <div style={{ marginLeft: '1rem' }}>
+          <StaticImage
+            src={'../assets/img/ogp-logo.jpg'}
+            alt={'ogp logo'}
+            height={100}
+            layout="fixed"
+            style={{
+              borderRadius: '100%',
+            }}
+          />
+        </div>
       </div>
-      Skills: MongoDB · Express.js · Python · JavaScript · React.js · Node.js ·
-      AWS
+      <SkillsGroupContent>
+        Skills: MongoDB · Express.js · Python · JavaScript · React.js · Node.js
+        · AWS
+      </SkillsGroupContent>
     </WorkGroupContainer>
     <hr />
     <WorkGroupContainer>
@@ -75,12 +94,22 @@ const AboutMe = () => (
             </li>
           </ul>
         </div>
-        <div>
-          <StaticImage src={''} alt={''} height={100} />
+        <div style={{ marginLeft: '1rem' }}>
+          <StaticImage
+            src={'../assets/img/shopee-logo.jpg'}
+            alt={'shopee logo'}
+            height={100}
+            layout="fixed"
+            style={{
+              borderRadius: '100%',
+            }}
+          />
         </div>
       </div>
-      Skills: React Native · Express.js · Jenkins · Go (Programming Language) ·
-      Python · JavaScript · React.js · Node.js
+      <SkillsGroupContent>
+        Skills: React Native · Express.js · Jenkins · Go (Programming Language)
+        · Python · JavaScript · React.js · Node.js
+      </SkillsGroupContent>
     </WorkGroupContainer>
   </div>
 );
