@@ -60,21 +60,55 @@ const HeroBanner = () => (
     >
       <div
         style={{
-          border: `0.1rem ${Color.Primary} solid`,
-          height: '300px',
-          width: '300px',
+          height: '200px',
+          width: '200px',
           position: 'relative',
-          bottom: '-1rem',
-          right: '-1rem',
-          background: Color.Highlight,
+          background: Color.Secondary,
         }}
       >
-        <StaticImage
-          style={{ position: 'relative', left: '-2rem', top: '-2rem' }}
-          src={'../assets/img/profile-pic.jpg'}
-          alt={'handsome'}
-          height={300}
+        <div
+          style={{
+            border: `0.1rem ${Color.Highlight} solid`,
+            height: '200px',
+            width: '200px',
+            position: 'absolute',
+            left: '-2rem',
+            top: '-2rem',
+          }}
         />
+        <div
+          style={{
+            height: '200px',
+            width: '200px',
+            position: 'absolute',
+            left: '2rem',
+            top: '2rem',
+            background: Color.Highlight,
+          }}
+        />
+        <div
+          style={{
+            border: `0.1rem ${Color.Highlight} solid`,
+            height: '200px',
+            width: '200px',
+            position: 'absolute',
+            left: '0',
+            top: '0',
+            background: Color.Primary,
+          }}
+        >
+          <StaticImage
+            style={
+              {
+                // background: Color.Highlight,
+                // color: Color.Highlight,
+              }
+            }
+            src={'../assets/img/profile-nobg.png'}
+            alt={'handsome'}
+            height={200}
+          />
+        </div>
       </div>
     </div>
   </div>
