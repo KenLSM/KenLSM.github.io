@@ -54,6 +54,8 @@ const HeroBanner = () => (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: '2rem',
+        marginBottom: '2rem',
       }}
     >
       <div

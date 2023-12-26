@@ -15,11 +15,12 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'baseline',
+        flexWrap: 'wrap',
       }}
     >
       <h3
         style={{
-          margin: 0,
+          marginTop: 0,
         }}
       >
         <Link
@@ -33,7 +34,7 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
         </Link>
       </h3>
 
-      <div>
+      <h5 style={{ margin: 0 }}>
         <Link
           style={{
             boxShadow: `none`,
@@ -41,7 +42,7 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
           }}
           to={`/me`}
         >
-          about
+          About
         </Link>
         <Link
           style={{
@@ -51,9 +52,9 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
           }}
           to={`/`}
         >
-          blog
+          Blog
         </Link>
-      </div>
+      </h5>
     </div>
   );
 
