@@ -1,52 +1,14 @@
-import * as React from "react";
-import { Link } from "gatsby";
-import { rhythm, scale } from "../utils/typography";
+import { Link } from 'gatsby';
+import * as React from 'react';
+
+import { Color } from '../utils/color';
+import { rhythm, scale } from '../utils/typography';
 
 const Layout = ({ location, title, children }): React.JSX.Element => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
-  let header;
-
-  if (isRootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    );
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    );
-  }
+  const isMePath = location.pathname === '/me/';
+  console.log({ rootPath, location: location.pathname, isMePath });
 
   return (
     <div
@@ -59,7 +21,67 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
       }}
       data-is-root-path={isRootPath}
     >
-      <header className="global-header">{header}</header>
+      <header className="global-header">
+        <div
+          style={{
+            fontFamily: `Montserrat, sans-serif`,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            flexWrap: 'wrap',
+          }}
+        >
+          <h3
+            style={{
+              marginTop: 0,
+            }}
+          >
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+              }}
+              to={`/`}
+            >
+              {title}
+            </Link>
+          </h3>
+
+          <h5 style={{ margin: 0, marginLeft: '1rem' }}>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                paddingLeft: rhythm(1 / 2),
+                paddingRight: rhythm(1 / 2),
+                paddingBottom: rhythm(1 / 4),
+                borderBottom: isMePath
+                  ? `${Color.Highlight} 1px solid`
+                  : 'none',
+              }}
+              to={`/me`}
+            >
+              About
+            </Link>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                marginLeft: rhythm(1),
+                paddingLeft: rhythm(1 / 2),
+                paddingRight: rhythm(1 / 2),
+                paddingBottom: rhythm(1 / 4),
+                borderBottom: !isMePath
+                  ? `${Color.Highlight} 1px solid`
+                  : 'none',
+              }}
+              to={`/`}
+            >
+              Blog
+            </Link>
+          </h5>
+        </div>
+      </header>
       <main>{children}</main>
       <footer>
         Him on <a href="https://twitter.com/kenleesm">X</a>
