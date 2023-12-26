@@ -8,6 +8,8 @@ const HeroBanner = () => (
     style={{
       minHeight: '60vh',
       display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
     }}
   >
     <div
@@ -18,6 +20,8 @@ const HeroBanner = () => (
         borderLeftWidth: '0.25rem',
         borderLeftStyle: 'solid',
         paddingLeft: '2rem',
+        marginRight: '2rem',
+        minWidth: '22.5rem',
       }}
     >
       <span
@@ -47,10 +51,9 @@ const HeroBanner = () => (
     <div
       style={{
         flex: 1,
-        // background: Color.Primary,
         display: 'flex',
         alignItems: 'center',
-        paddingLeft: '20rem',
+        justifyContent: 'center',
       }}
     >
       <div
@@ -59,8 +62,8 @@ const HeroBanner = () => (
           height: '300px',
           width: '300px',
           position: 'relative',
-          top: '1rem',
-          right: '1rem',
+          bottom: '-1rem',
+          right: '-1rem',
           background: Color.Highlight,
         }}
       >
