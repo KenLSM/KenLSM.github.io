@@ -8,7 +8,6 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
   const isMePath = location.pathname === '/me/';
-  console.log({ rootPath, location: location.pathname, isMePath });
 
   return (
     <div
