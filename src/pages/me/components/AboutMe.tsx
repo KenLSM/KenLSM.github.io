@@ -148,7 +148,15 @@ const AboutMe = () => (
       >
         <div>
           <ul>
-            <li>https://uvents.nus.edu.sg/homepage/events</li>
+            <li>
+              Develop an event management{' '}
+              <a
+                href="https://uvents.nus.edu.sg/homepage/events"
+                target="_blank"
+              >
+                website
+              </a>
+            </li>
             <li>
               Pushed development of scoped user roles in the accounts system
             </li>

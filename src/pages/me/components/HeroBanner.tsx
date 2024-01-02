@@ -45,7 +45,16 @@ const HeroBanner = () => (
       </h2>
       <span>
         I write <strong>code</strong> and <strong>solve problems</strong> in the
-        internet industry.
+        internet industry, and sometimes speak about things on the{' '}
+        <strong>
+          <a
+            href="https://engineers.sg/presenter/ken-lee--1229"
+            target="_blank"
+          >
+            interweb
+          </a>
+        </strong>
+        .
       </span>
     </div>
     <div
