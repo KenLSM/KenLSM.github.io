@@ -153,8 +153,8 @@ const config: GatsbyConfig = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "UA-65011530-5",
           "G-KY33K48LCT",
+          "UA-65011530-5",
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
