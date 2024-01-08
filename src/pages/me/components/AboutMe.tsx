@@ -1,9 +1,47 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-const WorkGroupContainer = ({ children }: { children?: React.ReactNode }) => (
-  <div style={{ marginBottom: '2rem' }}>{children}</div>
+const WorkGroupContainer = ({
+  children,
+  logoElement,
+  date,
+  location,
+}: {
+  children?: React.ReactNode;
+  logoElement?: React.ReactNode;
+  date: string;
+  location: string;
+}) => (
+  <div
+    style={{
+      marginBottom: '2rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+    }}
+  >
+    <div>
+      <LocoDateContent date={date} location={location} />
+      {children}
+    </div>
+    <div style={{ marginLeft: '2rem', marginTop: '2rem' }}>{logoElement}</div>
+  </div>
 );
+
+const LocoDateContent = ({
+  date,
+  location,
+}: {
+  date: string;
+  location: string;
+}) => {
+  return (
+    <p>
+      <small>{date}</small>
+      <br />
+      {location}
+    </p>
+  );
+};
 
 const SkillsGroupContent = ({ children }: { children?: React.ReactNode }) => (
   <div>{children}</div>
@@ -11,13 +49,22 @@ const SkillsGroupContent = ({ children }: { children?: React.ReactNode }) => (
 
 const AboutMe = () => (
   <div>
-    <h1>About Me</h1>
-    <WorkGroupContainer>
-      <p>
-        I'm working at OGP as a Senior Software Engineer where I help:
-        <br />
-        <small>From Feb'23 to current, Singapore</small>
-      </p>
+    <h1 style={{ fontWeight: 'normal' }}>About Me</h1>
+    <WorkGroupContainer
+      date="Feb'23 to current, Singapore"
+      location="I'm working at OGP as a Senior Software Engineer where I help:"
+      logoElement={
+        <StaticImage
+          src="../assets/img/ogp-logo.jpg"
+          alt="logo"
+          height={100}
+          layout="fixed"
+          style={{
+            borderRadius: '100%',
+          }}
+        />
+      }
+    >
       <div
         style={{
           display: 'flex',
@@ -25,33 +72,20 @@ const AboutMe = () => (
           justifyContent: 'space-between',
         }}
       >
-        <div>
-          <ul>
-            <li>
-              Leading the payment initiative to see it being released, and
-              spearheading multiple core features as the tech lead for payments
-            </li>
-            <li>
-              Improving signify's FE through introduction of best practices and
-              organization of FE components
-            </li>
-            <li>
-              Improving FormSG engineering efficiencies through introduction of
-              tools and practices
-            </li>
-          </ul>
-        </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <StaticImage
-            src={'../assets/img/ogp-logo.jpg'}
-            alt={'ogp logo'}
-            height={100}
-            layout="fixed"
-            style={{
-              borderRadius: '100%',
-            }}
-          />
-        </div>
+        <ul>
+          <li>
+            Leading the payment initiative to see it being released, and
+            spearheading multiple core features as the tech lead for payments
+          </li>
+          <li>
+            Improving signify's FE through introduction of best practices and
+            organization of FE components
+          </li>
+          <li>
+            Improving FormSG engineering efficiencies through introduction of
+            tools and practices
+          </li>
+        </ul>
       </div>
       <SkillsGroupContent>
         Skills: MongoDB · Express.js · Python · JavaScript · React.js · Node.js
@@ -61,12 +95,21 @@ const AboutMe = () => (
 
     <hr />
 
-    <WorkGroupContainer>
-      <p>
-        I've worked at Shopee as an Expert Software Engineer where I help:{' '}
-        <br />
-        <small>From Sep'18 to Feb'23, Singapore</small>
-      </p>
+    <WorkGroupContainer
+      date="Sep'18 to Feb'23, Singapore"
+      location="I've worked at Shopee as an Expert Software Engineer where I help:"
+      logoElement={
+        <StaticImage
+          src="../assets/img/shopee-logo.jpg"
+          alt="logo"
+          height={100}
+          layout="fixed"
+          style={{
+            borderRadius: '100%',
+          }}
+        />
+      }
+    >
       <div
         style={{
           display: 'flex',
@@ -114,17 +157,6 @@ const AboutMe = () => (
             </li>
           </ul>
         </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <StaticImage
-            src={'../assets/img/shopee-logo.jpg'}
-            alt={'shopee logo'}
-            height={100}
-            layout="fixed"
-            style={{
-              borderRadius: '100%',
-            }}
-          />
-        </div>
       </div>
       <SkillsGroupContent>
         Skills: React Native · Express.js · Jenkins · Go (Programming Language)
@@ -134,11 +166,21 @@ const AboutMe = () => (
 
     <hr />
 
-    <WorkGroupContainer>
-      <p>
-        I've worked part-time at NUS as a Web Developer where I help: <br />
-        <small>From Jun'17 to Dec'18, Singapore</small>
-      </p>
+    <WorkGroupContainer
+      date="Jun'17 to Dec'18, Singapore"
+      location="I've worked part-time at NUS as a Web Developer where I help:"
+      logoElement={
+        <StaticImage
+          src="../assets/img/nus-logo.jpg"
+          alt="logo"
+          height={100}
+          layout="fixed"
+          style={{
+            borderRadius: '100%',
+          }}
+        />
+      }
+    >
       <div
         style={{
           display: 'flex',
@@ -167,17 +209,6 @@ const AboutMe = () => (
             </li>
           </ul>
         </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <StaticImage
-            src={'../assets/img/nus-logo.jpg'}
-            alt={'nus logo'}
-            height={100}
-            layout="fixed"
-            style={{
-              borderRadius: '100%',
-            }}
-          />
-        </div>
       </div>
       <SkillsGroupContent>
         Skills: Express.js · JavaScript · React.js · Node.js
@@ -186,12 +217,21 @@ const AboutMe = () => (
 
     <hr />
 
-    <WorkGroupContainer>
-      <p>
-        I've worked part-time at NUS as a Teaching Assistant where I help:{' '}
-        <br />
-        <small>From Jan'18 to May'18, Singapore</small>
-      </p>
+    <WorkGroupContainer
+      date="Jan'18 to May'18, Singapore"
+      location="I've worked part-time at NUS as a Teaching Assistant where I help:"
+      logoElement={
+        <StaticImage
+          src="../assets/img/nus-logo.jpg"
+          alt="logo"
+          height={100}
+          layout="fixed"
+          style={{
+            borderRadius: '100%',
+          }}
+        />
+      }
+    >
       <div
         style={{
           display: 'flex',
@@ -208,20 +248,9 @@ const AboutMe = () => (
             <li>Teaching feedback score: 4.6/5</li>
           </ul>
         </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <StaticImage
-            src={'../assets/img/nus-logo.jpg'}
-            alt={'nus logo'}
-            height={100}
-            layout="fixed"
-            style={{
-              borderRadius: '100%',
-            }}
-          />
-        </div>
       </div>
       <p>
-        <small>From Aug'17 to Dec'17, Singapore</small>
+        <small>Aug'17 to Dec'17, Singapore</small>
       </p>
       <div>
         <ul>
@@ -236,11 +265,21 @@ const AboutMe = () => (
 
     <hr />
 
-    <WorkGroupContainer>
-      <p>
-        I've interned at GovTech as a DevOps Engineer where I help: <br />
-        <small>From May'17 to Jul'17, Singapore</small>
-      </p>
+    <WorkGroupContainer
+      date="May'17 to Jul'17, Singapore"
+      location="I've interned at GovTech as a DevOps Engineer where I help:"
+      logoElement={
+        <StaticImage
+          src={'../assets/img/govtech-logo.jpg'}
+          alt={'govtech logo'}
+          height={100}
+          layout="fixed"
+          style={{
+            borderRadius: '100%',
+          }}
+        />
+      }
+    >
       <div
         style={{
           display: 'flex',
@@ -258,17 +297,6 @@ const AboutMe = () => (
             </li>
           </ul>
         </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <StaticImage
-            src={'../assets/img/govtech-logo.jpg'}
-            alt={'govtech logo'}
-            height={100}
-            layout="fixed"
-            style={{
-              borderRadius: '100%',
-            }}
-          />
-        </div>
       </div>
       <SkillsGroupContent>
         Skills: Express.js · Jenkins · Python · JavaScript · Python (Programming
@@ -278,12 +306,21 @@ const AboutMe = () => (
 
     <hr />
 
-    <WorkGroupContainer>
-      <p>
-        I've worked part-time at NUS as a Teaching Assistant where I help:{' '}
-        <br />
-        <small>From Jan'17 to Apr'17, Singapore</small>
-      </p>
+    <WorkGroupContainer
+      date="Jan'17 to Apr'17, Singapore"
+      location="I've worked part-time at NUS as a Teaching Assistant where I help:"
+      logoElement={
+        <StaticImage
+          src={'../assets/img/nus-logo.jpg'}
+          alt={'nus logo'}
+          height={100}
+          layout="fixed"
+          style={{
+            borderRadius: '100%',
+          }}
+        />
+      }
+    >
       <div
         style={{
           display: 'flex',
@@ -300,27 +337,26 @@ const AboutMe = () => (
             <li>Teaching feedback score: 4.1/5</li>
           </ul>
         </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <StaticImage
-            src={'../assets/img/nus-logo.jpg'}
-            alt={'nus logo'}
-            height={100}
-            layout="fixed"
-            style={{
-              borderRadius: '100%',
-            }}
-          />
-        </div>
       </div>
     </WorkGroupContainer>
 
     <hr />
 
-    <WorkGroupContainer>
-      <p>
-        I've interned at PRX.co as a Software Engineer where I help: <br />
-        <small>From Jan'16 to Dec'16, San Francisco Bay Area</small>
-      </p>
+    <WorkGroupContainer
+      date="Jan'16 to Dec'16, San Francisco Bay Area"
+      location="I've interned at PRX.co as a Software Engineer where I help:"
+      logoElement={
+        <StaticImage
+          src={'../assets/img/prx-logo.jpg'}
+          alt={'prx logo'}
+          height={100}
+          layout="fixed"
+          style={{
+            borderRadius: '100%',
+          }}
+        />
+      }
+    >
       <div
         style={{
           display: 'flex',
@@ -348,17 +384,6 @@ const AboutMe = () => (
               journalists to relieve team from tending to automated responses
             </li>
           </ul>
-        </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <StaticImage
-            src={'../assets/img/prx-logo.jpg'}
-            alt={'prx logo'}
-            height={100}
-            layout="fixed"
-            style={{
-              borderRadius: '100%',
-            }}
-          />
         </div>
       </div>
       <SkillsGroupContent>

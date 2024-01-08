@@ -41,20 +41,12 @@ const HeroBanner = () => (
           fontWeight: 'normal',
         }}
       >
-        I'm <span style={{ fontWeight: 'bold' }}>Ken Lee</span>
+        I'm Ken Lee
       </h2>
       <span>
-        I write <strong>code</strong> and <strong>solve problems</strong> in the
+        I write <strong>code</strong> and <strong>solve</strong> problems in the
         internet industry, and sometimes speak about things on the{' '}
-        <strong>
-          <a
-            href="https://engineers.sg/presenter/ken-lee--1229"
-            target="_blank"
-          >
-            interweb
-          </a>
-        </strong>
-        .
+        <strong>interweb</strong>.
       </span>
     </div>
     <div

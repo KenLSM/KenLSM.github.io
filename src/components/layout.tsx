@@ -83,11 +83,22 @@ const Layout = ({ location, title, children }): React.JSX.Element => {
       </header>
       <main>{children}</main>
       <footer>
-        Him on <a href="https://twitter.com/kenleesm">X</a>
+        Him on{' '}
+        <a href="https://twitter.com/kenleesm" target="_blank">
+          X
+        </a>
         {` | `}
-        <a href="http://github.com/kenlsm">Github</a>
+        <a href="http://github.com/kenlsm" target="_blank">
+          Github
+        </a>
         {` | `}
-        <a href="https://www.linkedin.com/in/kenlsm/">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/kenlsm/" target="_blank">
+          LinkedIn
+        </a>
+        {` | `}
+        <a href="https://engineers.sg/presenter/ken-lee--1229" target="_blank">
+          EngineerSG
+        </a>
       </footer>
     </div>
   );
